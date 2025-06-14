@@ -1,68 +1,74 @@
-const translations = {
-    en: {
-        'lang-toggle': 'Switch to Hindi',
-        'home-btn': 'Home',
-        'gems-btn': 'Gems of Society',
-        'donation-btn': 'Donation',
-        'auth-btn': 'Authentication',
-        'about-btn': 'About Us',
-        'works-btn': 'Works',
-        'gallery-btn': 'Gallery',
-        'blog-btn': 'Blogs & Posts',
-        'contact-btn': 'Contact Us',
-        'help-btn': 'Help',
-        'signin_login-btn': 'Signin/Login',
-        'footer-org': '©2025 Radha Maadhav Gav Seva Evam Jan Kalyaan Samiti',
-        'footer-address': 'Address: Village Akauri, Post Rampur, Tehsil Naigarhi, District Mauganj, Madhya Pradesh, India, PIN-486340',
-        'footer-contact': 'Contact: +91 7389597674, +91 7773059344',
-        'footer-email': 'Email: santrajsingh2025@gmail.com'
-    },
-    hi: {
-        'lang-toggle': 'Switch to English',
-        'home-btn': 'होम',
-        'gems-btn': 'समाज के रत्न',
-        'donation-btn': 'दान',
-        'auth-btn': 'प्रमाणीकरण',
-        'about-btn': 'हमारे बारे में',
-        'works-btn': 'कार्य',
-        'gallery-btn': 'गैलरी',
-        'blog-btn': 'ब्लॉग और पोस्ट',
-        'contact-btn': 'संपर्क करें',
-        'help-btn': 'सहायता',
-        'signin_login-btn': 'साइन इन/लॉगिन',
-        'footer-org': '©2025 राधा माधव गव सेवा एवम जन कल्याण समिति',
-        'footer-address': 'पता: ग्राम अकौरी, पोस्ट रामपुर, तहसील नईगढ़ी, जिला मौगंज, मध्य प्रदेश, भारत, पिन-486340',
-        'footer-contact': 'संपर्क: +91 7389597674, +91 7773059344',
-        'footer-email': 'ईमेल: santrajsingh2025@gmail.com'
-    }
-};
+let currentLanguage = 'en';
 
-let currentLang = 'en';
+function showSection(sectionId) {
+    // Hide all sections
+    document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+    });
+    // Show selected section
+    document.getElementById(sectionId).classList.add('active');
+}
 
 function toggleLanguage() {
-    currentLang = currentLang === 'en' ? 'hi' : 'en';
-    document.getElementById('lang-toggle').textContent = translations[currentLang]['lang-toggle'];
-    document.querySelector('nav button:nth-child(1)').textContent = translations[currentLang]['home-btn'];
-    document.querySelector('nav button:nth-child(2)').textContent = translations[currentLang]['gems-btn'];
-    document.querySelector('nav button:nth-child(3)').textContent = translations[currentLang]['donation-btn'];
-    document.querySelector('nav button:nth-child(4)').textContent = translations[currentLang]['auth-btn'];
-    document.querySelector('nav button:nth-child(5)').textContent = translations[currentLang]['about-btn'];
-    document.querySelector('nav button:nth-child(6)').textContent = translations[currentLang]['works-btn'];
-    document.querySelector('nav button:nth-child(7)').textContent = translations[currentLang]['gallery-btn'];
-    document.querySelector('nav button:nth-child(8)').textContent = translations[currentLang]['blog-btn'];
-    document.querySelector('nav button:nth-child(9)').textContent = translations[currentLang]['contact-btn'];
-    document.querySelector('nav button:nth-child(10)').textContent = translations[currentLang]['help-btn'];
-    document.querySelector('nav button:nth-child(11)').textContent = translations[currentLang]['signin_login-btn'];
-    document.querySelector('footer p:nth-child(1)').textContent = translations[currentLang]['footer-org'];
-    document.querySelector('footer p:nth-child(2)').textContent = translations[currentLang]['footer-address'];
-    document.querySelector('footer p:nth-child(3)').textContent = translations[currentLang]['footer-contact'];
-    document.querySelector('footer p:nth-child(4)').innerHTML = `Email: <a href="mailto:santrajsingh2025@gmail.com">${translations[currentLang]['footer-email'].split(': ')[1]}</a>`;
+    const buttons = document.querySelectorAll('.nav-btn:not(.lang-toggle)');
+    const textBar = document.getElementById('text-bar-content');
+    const langBtn = document.getElementById('lang-btn');
+
+    if (currentLanguage === 'en') {
+        currentLanguage = 'hi';
+        buttons.forEach(btn => btn.textContent = btn.dataset.hi);
+        textBar.textContent = 'राधा माधव गव सेवा एवम् जन कल्याण समिति एक सरकार द्वारा मान्यता प्राप्त संस्था';
+        langBtn.textContent = 'English/Hindi';
+    } else {
+        currentLanguage = 'en';
+        buttons.forEach(btn => btn.textContent = btn.dataset.en);
+        textBar.textContent = 'Radha Maadhav Gav Seva Evam Jan Kalyan Samiti a Government approved institution';
+        langBtn.textContent = 'Hindi/English';
+    }
+
+    // Update section titles and textboxes
+    const sectionTitles = {
+        home: { en: 'Home', hi: 'होम' },
+        gems: { en: 'Gems of Society', hi: 'समाज के रत्न' },
+        donation: { en: 'Donation', hi: 'दान' },
+        auth: { en: 'Authentication', hi: 'प्रमाणीकरण' },
+        about: { en: 'About Us', hi: 'हमारे बारे में' },
+        works: { en: 'Works', hi: 'कार्य' },
+        gallery: { en: 'Gallery', hi: 'गैलरी' },
+        blog: { en: 'Blogs & Posts', hi: 'ब्लॉग और पोस्ट' },
+        contact: { en: 'Contact Us', hi: 'संपर्क करें' },
+        help: { en: 'Help', hi: 'मदद' },
+        signin_login: { en: 'Signin/Login', hi: 'साइन इन/लॉगिन' }
+    };
+
+    const textBoxContent = {
+        home: { en: 'Home Text', hi: 'होम टेक्स्ट' },
+        gems: { en: 'Gems Text', hi: 'जेम्स टेक्स्ट' },
+        donation: { en: 'Donation Text', hi: 'डोनेशन टेक्स्ट' },
+        auth: { en: 'Auth Text', hi: 'अथ टेक्स्ट' },
+        about: { en: 'About Text', hi: 'अबाउट टेक्स्ट' },
+        works: { en: 'Works Text', hi: 'वर्क्स टेक्स्ट' },
+        gallery: { en: 'Gallery Text', hi: 'गैलरी टेक्स्ट' },
+        blog: { en: 'Blog Text', hi: 'ब्लॉग टेक्स्ट' },
+        contact: { en: 'Contact Text', hi: 'कॉन्टैक्ट टेक्स्ट' },
+        help: { en: 'Help Text', hi: 'हेल्प टेक्स्ट' },
+        signin_login: { en: 'Signin/Login Text', hi: 'साइन इन/लॉगिन टेक्स्ट' }
+    };
+
+    Object.keys(sectionTitles).forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            const title = section.querySelector('h2');
+            if (title) title.textContent = sectionTitles[sectionId][currentLanguage];
+            for (let i = 1; i <= 10; i++) {
+                const textBox = document.getElementById(`${sectionId}_frame_textbox${i}`);
+                if (textBox) textBox.value = `${textBoxContent[sectionId][currentLanguage]} ${i}`;
+            }
+        }
+    });
 }
 
-function showPage(pageId) {
-    document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-    document.getElementById(pageId).classList.add('active');
-}
-
-document.getElementById('lang-toggle').addEventListener('click', toggleLanguage);
-window.onload = () => showPage('home');
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    showSection('home'); // Show home section by default
+});
