@@ -1,195 +1,113 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    background: url('pics/bg.jpeg') no-repeat center center fixed;
-    background-size: cover;
-    color: #333;
-    line-height: 1.6;
-}
-
-.hi {
-    font-family: 'Noto Sans Devanagari', sans-serif;
+    background-color: #ffe4b5;
 }
 
 header {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    color: #ff6f00;
-}
-
-.lang-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.lang-toggle a {
-    text-decoration: none;
-    color: #fff;
-    background: #ff6f00;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-section {
-    padding: 50px 20px;
-    margin: 20px auto;
-    max-width: 1200px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-}
-
-section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.content p {
-    font-size: 1.1em;
-    text-align: center;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-}
-
-.gallery-grid img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.upi-img {
-    display: block;
-    margin: 20px auto;
-    max-width: 200px;
-    height: auto;
-}
-
-footer {
-    background: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-footer p {
-    font-size: 0.9em;
-}
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-    background: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover {
-    color: #000;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-form label {
-    font-weight: bold;
-}
-
-form input {
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    text-align: right;
 }
 
-form button {
-    background: #ff6f00;
-    color: #fff;
-    padding: 10px;
+#lang-toggle {
+    padding: 8px 15px;
+    background-color: #ff4500;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-weight: bold;
 }
 
-form button:hover {
-    background: #e65c00;
+nav {
+    background-color: #ff8c00;
+    padding: 10px;
+    text-align: center;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8em;
-    }
+nav button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ffa500;
+    color: white;
+}
 
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
+nav button:hover {
+    background-color: #ff4500;
+}
 
-    section {
-        padding: 30px 10px;
-    }
+.page {
+    display: none;
+    padding: 20px;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+}
 
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
+.page.active {
+    display: block;
+}
+
+#home { background-image: url('home.jpeg'); }
+#gems { background-image: url('gems.jpeg'); }
+#donation { background-image: url('donation.jpeg'); }
+#auth { background-image: url('auth.jpeg'); }
+#about { background-image: url('about.jpeg'); }
+#works { background-image: url('works.jpeg'); }
+#gallery { background-image: url('gallery.jpeg'); }
+#blog { background-image: url('blog.jpeg'); }
+#contact { background-image: url('contact.jpeg'); }
+#help { background-image: url('help.jpeg'); }
+#signin_login { background-image: url('signin_login.jpeg'); }
+
+.frame {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.frame img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.frame textarea {
+    width: 100%;
+    height: 100px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#home .frame { background-color: rgba(173, 216, 230, 0.8); }
+#gems .frame { background-color: rgba(144, 238, 144, 0.8); }
+#donation .frame { background-color: rgba(255, 182, 193, 0.8); }
+#auth .frame { background-color: rgba(240, 230, 140, 0.8); }
+#about .frame { background-color: rgba(176, 224, 230, 0.8); }
+#works .frame { background-color: rgba(245, 245, 220, 0.8); }
+#gallery .frame { background-color: rgba(255, 228, 225, 0.8); }
+#blog .frame { background-color: rgba(211, 211, 211, 0.8); }
+#contact .frame { background-color: rgba(152, 251, 152, 0.8); }
+#help .frame { background-color: rgba(255, 245, 238, 0.8); }
+#signin_login .frame { background-color: rgba(216, 191, 216, 0.8); }
+
+footer {
+    background-color: #ff8c00;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #ffd700;
 }
