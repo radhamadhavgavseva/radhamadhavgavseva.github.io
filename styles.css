@@ -1,55 +1,93 @@
 body {
     margin: 0;
+    padding: 0;
+    background-color: #ffcc99; /* Light orange */
     font-family: Arial, sans-serif;
-    background-color: #ffe4b5;
 }
 
-header {
-    padding: 10px;
-    text-align: right;
-}
-
-#lang-toggle {
-    padding: 8px 15px;
-    background-color: #ff4500;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-nav {
-    background-color: #ff8c00;
-    padding: 10px;
+/* Text Bar Strip */
+.text-bar {
+    background-color: #e9c617; /* Gold */
+    color: #006400; /* Green */
+    padding: 0px;
     text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 700;
 }
 
-nav button {
+/* Moving Text Strip */
+.moving-text-bar {
+    background-color: rgba(255.0.0.0.0);
+    color: #150101;
+    padding: 20px;
+    font-size: 15px;
+    position: fixed;
+    top: 40px; /* Below text-bar */
+    width: 100%;
+    z-index: 999;
+    overflow: hidden;
+}
+marquee {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Navigation Strip */
+.nav-strip {
+    background-color: #efe1e1;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: fixed;
+    top: 80px; /* Below moving-text-bar */
+    width: 100%;
+    z-index: 998;
+}
+.nav-btn {
     margin: 5px;
-    padding: 10px 15px;
+    padding: 8px 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    background-color: #ffa500;
+    font-size: 14px;
+    transition: background-color 0.3s;
     color: white;
 }
-
-nav button:hover {
-    background-color: #ff4500;
+.nav-btn:hover {
+    opacity: 0.8;
 }
 
-.page {
+/* Unique colors for each button */
+.nav-btn:nth-child(1) { background-color: #ff6347; } /* Home - Tomato */
+.nav-btn:nth-child(2) { background-color: #4682b4; } /* Gems - SteelBlue */
+.nav-btn:nth-child(3) { background-color: #32cd32; } /* Donation - LimeGreen */
+.nav-btn:nth-child(4) { background-color: #ff4500; } /* Authentication - OrangeRed */
+.nav-btn:nth-child(5) { background-color: #6a5acd; } /* About - SlateBlue */
+.nav-btn:nth-child(6) { background-color: #ff69b4; } /* Works - HotPink */
+.nav-btn:nth-child(7) { background-color: #20b2aa; } /* Gallery - LightSeaGreen */
+.nav-btn:nth-child(8) { background-color: #d2691e; } /* Blog - Chocolate */
+.nav-btn:nth-child(9) { background-color: #9932cc; } /* Contact - DarkOrchid */
+.nav-btn:nth-child(10) { background-color: #228b22; } /* Help - ForestGreen */
+.nav-btn:nth-child(11) { background-color: #1e90ff; } /* Signin/Login - DodgerBlue */
+.nav-btn:nth-child(12) { background-color: #8b4513; } /* Language Toggle - SaddleBrown */
+
+/* Sections */
+.section {
     display: none;
-    padding: 20px;
-    min-height: 400px;
+    padding: 120px 20px 60px; /* Adjust for fixed strips and footer */
+    min-height: calc(100vh - 180px);
     background-size: cover;
     background-position: center;
 }
-
-.page.active {
+.section.active {
     display: block;
 }
 
+/* Background Images */
 #home { background-image: url('home.jpeg'); }
 #gems { background-image: url('gems.jpeg'); }
 #donation { background-image: url('donation.jpeg'); }
@@ -62,53 +100,66 @@ nav button:hover {
 #help { background-image: url('help.jpeg'); }
 #signin_login { background-image: url('signin_login.jpeg'); }
 
+/* Frame Styles */
 .frame {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
     padding: 20px;
     border-radius: 10px;
+    max-width: 1200px;
     margin: 0 auto;
-    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-
-.frame img {
-    max-width: 100%;
-    height: auto;
-    margin: 10px 0;
+.frame h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.frame-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+.frame-content img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
     border-radius: 5px;
 }
-
-.frame textarea {
+.frame-content textarea {
     width: 100%;
-    height: 100px;
-    margin: 10px 0;
+    height: 80px;
+    resize: none;
     border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
+    font-size: 12px;
 }
 
-#home .frame { background-color: rgba(173, 216, 230, 0.8); }
-#gems .frame { background-color: rgba(144, 238, 144, 0.8); }
-#donation .frame { background-color: rgba(255, 182, 193, 0.8); }
-#auth .frame { background-color: rgba(240, 230, 140, 0.8); }
-#about .frame { background-color: rgba(176, 224, 230, 0.8); }
-#works .frame { background-color: rgba(245, 245, 220, 0.8); }
-#gallery .frame { background-color: rgba(255, 228, 225, 0.8); }
-#blog .frame { background-color: rgba(211, 211, 211, 0.8); }
-#contact .frame { background-color: rgba(152, 251, 152, 0.8); }
-#help .frame { background-color: rgba(255, 245, 238, 0.8); }
-#signin_login .frame { background-color: rgba(216, 191, 216, 0.8); }
+/* Unique Frame Colors */
+#home .frame { border: 3px solid #ff6347; } /* Tomato */
+#gems .frame { border: 3px solid #4682b4; } /* SteelBlue */
+#donation .frame { border: 3px solid #32cd32; } /* LimeGreen */
+#auth .frame { border: 3px solid #ff4500; } /* OrangeRed */
+#about .frame { border: 3px solid #6a5acd; } /* SlateBlue */
+#works .frame { border: 3px solid #ff69b4; } /* HotPink */
+#gallery .frame { border: 3px solid #20b2aa; } /* LightSeaGreen */
+#blog .frame { border: 3px solid #d2691e; } /* Chocolate */
+#contact .frame { border: 3px solid #9932cc; } /* DarkOrchid */
+#help .frame { border: 3px solid #228b22; } /* ForestGreen */
+#signin_login .frame { border: 3px solid #1e90ff; } /* DodgerBlue */
 
-footer {
-    background-color: rgba(255, 255, 255, .7);;
-    color: rgb(9, 9, 9);
-    font-size: xx-small;
+/* Footer */
+.footer {
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
+    color: #fff;
     text-align: center;
     padding: 10px;
     position: fixed;
     bottom: 0;
     width: 100%;
+    font-size: 10px; /* Extra small */
+    z-index: 1000;
 }
-
-footer a {
-    color: #ffd700;
+.footer a {
+    color: #fff;
+    text-decoration: none;
 }
