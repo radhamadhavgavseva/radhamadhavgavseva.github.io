@@ -3,138 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radha Madhav Gav Seva</title>
+    <title>Radha Maadhav Gav Seva</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <button id="lang-toggle">Switch to Hindi</button>
-    </header>
-    <nav>
-        <button onclick="showPage('home')">Home</button>
-        <button onclick="showPage('gems')">Gems of Society</button>
-        <button onclick="showPage('donation')">Donation</button>
-        <button onclick="showPage('auth')">Authentication</button>
-        <button onclick="showPage('about')">About Us</button>
-        <button onclick="showPage('works')">Works</button>
-        <button onclick="showPage('gallery')">Gallery</button>
-        <button onclick="showPage('blog')">Blogs & Posts</button>
-        <button onclick="showPage('contact')">Contact Us</button>
-        <button onclick="showPage('help')">Help</button>
-        <button onclick="showPage('signin_login')">Signin/Login</button>
-    </nav>
-    <main>
-        <section id="home" class="page active">
-            <div class="frame">
-                <img src="home_frame_pic1.jpeg" alt="Home Image 1">
-                <textarea id="home_frame_textbox1" placeholder="Description for Home Image 1"></textarea>
-                <img src="home_frame_pic2.jpeg" alt="Home Image 2">
-                <textarea id="home_frame_textbox2" placeholder="Description for Home Image 2"></textarea>
+     <!-- Moving Text Strip -->
+    <div class="moving-text-bar">
+        <marquee behavior="scroll" direction="left" id="moving-text-content">
+        "गावो भगो गाव इन्द्रो मे अच्छान्गावः सोमस्य प्रथमस्य भक्षः । इमा या गावः स जनास इन्द्र इच्छामीद्धृदा मनसा चिदिन्द्रम् ॥५॥"
+        </marquee>
+    </div>
+    <!-- Text Bar Strip -->
+    <div class="text-bar">
+        <p id="text-bar-content">Radha Maadhav Gav Seva Evam Jan Kalyan Samiti a Government approved institution</p>
+    </div>
+
+   
+
+    <!-- Navigation Strip -->
+    <div class="nav-strip">
+        <button class="nav-btn" onclick="showSection('home')" data-en="Home" data-hi="होम">Home</button>
+        <button class="nav-btn" onclick="showSection('gems')" data-en="Gems of Society" data-hi="समाज के रत्न">Gems of Society</button>
+        <button class="nav-btn" onclick="showSection('donation')" data-en="Donation" data-hi="दान">Donation</button>
+        <button class="nav-btn" onclick="showSection('auth')" data-en="Authentication" data-hi="प्रमाणीकरण">Authentication</button>
+        <button class="nav-btn" onclick="showSection('about')" data-en="About Us" data-hi="हमारे बारे में">About Us</button>
+        <button class="nav-btn" onclick="showSection('works')" data-en="Works" data-hi="कार्य">Works</button>
+        <button class="nav-btn" onclick="showSection('gallery')" data-en="Gallery" data-hi="गैलरी">Gallery</button>
+        <button class="nav-btn" onclick="showSection('blog')" data-en="Blogs & Posts" data-hi="ब्लॉग और पोस्ट">Blogs & Posts</button>
+        <button class="nav-btn" onclick="showSection('contact')" data-en="Contact Us" data-hi="संपर्क करें">Contact Us</button>
+        <button class="nav-btn" onclick="showSection('help')" data-en="Help" data-hi="मदद">Help</button>
+        <button class="nav-btn" onclick="showSection('signin_login')" data-en="Signin/Login" data-hi="साइन इन/लॉगिन">Signin/Login</button>
+        <button class="nav-btn lang-toggle" onclick="toggleLanguage()" id="lang-btn">Hindi/English</button>
+    </div>
+
+    <!-- Main Content Sections -->
+    <div id="home" class="section home">
+        <div class="frame">
+            <h2>Home</h2>
+            <div class="frame-content">
+                <img src="home_frame_pic1.jpeg" alt="Home Pic 1"><textarea id="home_frame_textbox1" readonly>Home Text 1</textarea>
+                <img src="home_frame_pic2.jpeg" alt="Home Pic 2"><textarea id="home_frame_textbox2" readonly>Home Text 2</textarea>
+                <img src="home_frame_pic3.jpeg" alt="Home Pic 3"><textarea id="home_frame_textbox3" readonly>Home Text 3</textarea>
+                <img src="home_frame_pic4.jpeg" alt="Home Pic 4"><textarea id="home_frame_textbox4" readonly>Home Text 4</textarea>
+                <img src="home_frame_pic5.jpeg" alt="Home Pic 5"><textarea id="home_frame_textbox5" readonly>Home Text 5</textarea>
+                <img src="home_frame_pic6.jpeg" alt="Home Pic 6"><textarea id="home_frame_textbox6" readonly>Home Text 6</textarea>
+                <img src="home_frame_pic7.jpeg" alt="Home Pic 7"><textarea id="home_frame_textbox7" readonly>Home Text 7</textarea>
+                <img src="home_frame_pic8.jpeg" alt="Home Pic 8"><textarea id="home_frame_textbox8" readonly>Home Text 8</textarea>
+                <img src="home_frame_pic9.jpeg" alt="Home Pic 9"><textarea id="home_frame_textbox9" readonly>Home Text 9</textarea>
+                <img src="home_frame_pic10.jpeg" alt="Home Pic 10"><textarea id="home_frame_textbox10" readonly>Home Text 10</textarea>
             </div>
-        </section>
-        <section id="gems" class="page">
-            <div class="frame">
-                <img src="gems_frame_pic1.jpeg" alt="Gems Image 1">
-                <textarea id="gems_frame_textbox1" placeholder="Description for Gems Image 1"></textarea>
-                <img src="gems_frame_pic2.jpeg" alt="Gems Image 2">
-                <textarea id="gems_frame_textbox2" placeholder="Description for Gems Image 2"></textarea>
-                <img src="gems_frame_pic3.jpeg" alt="Gems Image 3">
-                <textarea id="gems_frame_textbox3" placeholder="Description for Gems Image 3"></textarea>
-                <img src="gems_frame_pic4.jpeg" alt="Gems Image 4">
-                <textarea id="gems_frame_textbox4" placeholder="Description for Gems Image 4"></textarea>
-                <img src="gems_frame_pic5.jpeg" alt="Gems Image 5">
-                <textarea id="gems_frame_textbox5" placeholder="Description for Gems Image 5"></textarea>
-                <img src="gems_frame_pic6.jpeg" alt="Gems Image 6">
-                <textarea id="gems_frame_textbox6" placeholder="Description for Gems Image 6"></textarea>
-                <img src="gems_frame_pic7.jpeg" alt="Gems Image 7">
-                <textarea id="gems_frame_textbox7" placeholder="Description for Gems Image 7"></textarea>
-                <img src="gems_frame_pic8.jpeg" alt="Gems Image 8">
-                <textarea id="gems_frame_textbox8" placeholder="Description for Gems Image 8"></textarea>
-                <img src="gems_frame_pic9.jpeg" alt="Gems Image 9">
-                <textarea id="gems_frame_textbox9" placeholder="Description for Gems Image 9"></textarea>
-                <img src="gems_frame_pic10.jpeg" alt="Gems Image 10">
-                <textarea id="gems_frame_textbox10" placeholder="Description for Gems Image 10"></textarea>
+        </div>
+    </div>
+    <div id="gems" class="section gems">
+        <div class="frame">
+            <h2>Gems of Society</h2>
+            <div class="frame-content">
+                <img src="gems_frame_pic1.jpeg" alt="Gems Pic 1"><textarea id="gems_frame_textbox1" readonly>Gems Text 1</textarea>
+                <img src="gems_frame_pic2.jpeg" alt="Gems Pic 2"><textarea id="gems_frame_textbox2" readonly>Gems Text 2</textarea>
+                <img src="gems_frame_pic3.jpeg" alt="Gems Pic 3"><textarea id="gems_frame_textbox3" readonly>Gems Text 3</textarea>
+                <img src="gems_frame_pic4.jpeg" alt="Gems Pic 4"><textarea id="gems_frame_textbox4" readonly>Gems Text 4</textarea>
+                <img src="gems_frame_pic5.jpeg" alt="Gems Pic 5"><textarea id="gems_frame_textbox5" readonly>Gems Text 5</textarea>
+                <img src="gems_frame_pic6.jpeg" alt="Gems Pic 6"><textarea id="gems_frame_textbox6" readonly>Gems Text 6</textarea>
+                <img src="gems_frame_pic7.jpeg" alt="Gems Pic 7"><textarea id="gems_frame_textbox7" readonly>Gems Text 7</textarea>
+                <img src="gems_frame_pic8.jpeg" alt="Gems Pic 8"><textarea id="gems_frame_textbox8" readonly>Gems Text 8</textarea>
+                <img src="gems_frame_pic9.jpeg" alt="Gems Pic 9"><textarea id="gems_frame_textbox9" readonly>Gems Text 9</textarea>
+                <img src="gems_frame_pic10.jpeg" alt="Gems Pic 10"><textarea id="gems_frame_textbox10" readonly>Gems Text 10</textarea>
             </div>
-        </section>
-        <section id="donation" class="page">
-            <div class="frame">
-                <img src="donation_frame_pic1.jpeg" alt="Donation Image 1">
-                <textarea id="donation_frame_textbox1" placeholder="Description for Donation Image 1"></textarea>
-                <img src="donation_frame_pic2.jpeg" alt="Donation Image 2">
-                <textarea id="donation_frame_textbox2" placeholder="Description for Donation Image 2"></textarea>
+        </div>
+    </div>
+    <div id="donation" class="section donation">
+        <div class="frame">
+            <h2>Donation</h2>
+            <div class="frame-content">
+                <img src="donation_frame_pic1.jpeg" alt="Donation Pic 1"><textarea id="donation_frame_textbox1" readonly>Donation Text 1</textarea>
+                <img src="donation_frame_pic2.jpeg" alt="Donation Pic 2"><textarea id="donation_frame_textbox2" readonly>Donation Text 2</textarea>
+                <img src="donation_frame_pic3.jpeg" alt="Donation Pic 3"><textarea id="donation_frame_textbox3" readonly>Donation Text 3</textarea>
+                <img src="donation_frame_pic4.jpeg" alt="Donation Pic 4"><textarea id="donation_frame_textbox4" readonly>Donation Text 4</textarea>
+                <img src="donation_frame_pic5.jpeg" alt="Donation Pic 5"><textarea id="donation_frame_textbox5" readonly>Donation Text 5</textarea>
+                <img src="donation_frame_pic6.jpeg" alt="Donation Pic 6"><textarea id="donation_frame_textbox6" readonly>Donation Text 6</textarea>
+                <img src="donation_frame_pic7.jpeg" alt="Donation Pic 7"><textarea id="donation_frame_textbox7" readonly>Donation Text 7</textarea>
+                <img src="donation_frame_pic8.jpeg" alt="Donation Pic 8"><textarea id="donation_frame_textbox8" readonly>Donation Text 8</textarea>
+                <img src="donation_frame_pic9.jpeg" alt="Donation Pic 9"><textarea id="donation_frame_textbox9" readonly>Donation Text 9</textarea>
+                <img src="donation_frame_pic10.jpeg" alt="Donation Pic 10"><textarea id="donation_frame_textbox10" readonly>Donation Text 10</textarea>
             </div>
-        </section>
-        <section id="auth" class="page">
-            <div class="frame">
-                <img src="auth_frame_pic1.jpeg" alt="Auth Image 1">
-                <textarea id="auth_frame_textbox1" placeholder="Description for Auth Image 1"></textarea>
-                <img src="auth_frame_pic2.jpeg" alt="Auth Image 2">
-                <textarea id="auth_frame_textbox2" placeholder="Description for Auth Image 2"></textarea>
+        </div>
+    </div>
+    <div id="auth" class="section auth">
+        <div class="frame">
+            <h2>Authentication</h2>
+            <div class="frame-content">
+                <img src="auth_frame_pic1.jpeg" alt="Auth Pic 1"><textarea id="auth_frame_textbox1" readonly>Auth Text 1</textarea>
+                <img src="auth_frame_pic2.jpeg" alt="Auth Pic 2"><textarea id="auth_frame_textbox2" readonly>Auth Text 2</textarea>
+                <img src="auth_frame_pic3.jpeg" alt="Auth Pic 3"><textarea id="auth_frame_textbox3" readonly>Auth Text 3</textarea>
+                <img src="auth_frame_pic4.jpeg" alt="Auth Pic 4"><textarea id="auth_frame_textbox4" readonly>Auth Text 4</textarea>
+                <img src="auth_frame_pic5.jpeg" alt="Auth Pic 5"><textarea id="auth_frame_textbox5" readonly>Auth Text 5</textarea>
+                <img src="auth_frame_pic6.jpeg" alt="Auth Pic 6"><textarea id="auth_frame_textbox6" readonly>Auth Text 6</textarea>
+                <img src="auth_frame_pic7.jpeg" alt="Auth Pic 7"><textarea id="auth_frame_textbox7" readonly>Auth Text 7</textarea>
+                <img src="auth_frame_pic8.jpeg" alt="Auth Pic 8"><textarea id="auth_frame_textbox8" readonly>Auth Text 8</textarea>
+                <img src="auth_frame_pic9.jpeg" alt="Auth Pic 9"><textarea id="auth_frame_textbox9" readonly>Auth Text 9</textarea>
+                <img src="auth_frame_pic10.jpeg" alt="Auth Pic 10"><textarea id="auth_frame_textbox10" readonly>Auth Text 10</textarea>
             </div>
-        </section>
-        <section id="about" class="page">
-            <div class="frame">
-                <img src="about_frame_pic1.jpeg" alt="About Image 1">
-                <textarea id="about_frame_textbox1" placeholder="Description for About Image 1"></textarea>
-                <img src="about_frame_pic2.jpeg" alt="About Image 2">
-                <textarea id="about_frame_textbox2" placeholder="Description for About Image 2"></textarea>
+        </div>
+    </div>
+    <div id="about" class="section about">
+        <div class="frame">
+            <h2>About Us</h2>
+            <div class="frame-content">
+                <img src="about_frame_pic1.jpeg" alt="About Pic 1"><textarea id="about_frame_textbox1" readonly>About Text 1</textarea>
+                <img src="about_frame_pic2.jpeg" alt="About Pic 2"><textarea id="about_frame_textbox2" readonly>About Text 2</textarea>
+                <img src="about_frame_pic3.jpeg" alt="About Pic 3"><textarea id="about_frame_textbox3" readonly>About Text 3</textarea>
+                <img src="about_frame_pic4.jpeg" alt="About Pic 4"><textarea id="about_frame_textbox4" readonly>About Text 4</textarea>
+                <img src="about_frame_pic5.jpeg" alt="About Pic 5"><textarea id="about_frame_textbox5" readonly>About Text 5</textarea>
+                <img src="about_frame_pic6.jpeg" alt="About Pic 6"><textarea id="about_frame_textbox6" readonly>About Text 6</textarea>
+                <img src="about_frame_pic7.jpeg" alt="About Pic 7"><textarea id="about_frame_textbox7" readonly>About Text 7</textarea>
+                <img src="about_frame_pic8.jpeg" alt="About Pic 8"><textarea id="about_frame_textbox8" readonly>About Text 8</textarea>
+                <img src="about_frame_pic9.jpeg" alt="About Pic 9"><textarea id="about_frame_textbox9" readonly>About Text 9</textarea>
+                <img src="about_frame_pic10.jpeg" alt="About Pic 10"><textarea id="about_frame_textbox10" readonly>About Text 10</textarea>
             </div>
-        </section>
-        <section id="works" class="page">
-            <div class="frame">
-                <img src="works_frame_pic1.jpeg" alt="Works Image 1">
-                <textarea id="works_frame_textbox1" placeholder="Description for Works Image 1"></textarea>
-                <img src="works_frame_pic2.jpeg" alt="Works Image 2">
-                <textarea id="works_frame_textbox2" placeholder="Description for Works Image 2"></textarea>
+        </div>
+    </div>
+    <div id="works" class="section works">
+        <div class="frame">
+            <h2>Works</h2>
+            <div class="frame-content">
+                <img src="works_frame_pic1.jpeg" alt="Works Pic 1"><textarea id="works_frame_textbox1" readonly>Works Text 1</textarea>
+                <img src="works_frame_pic2.jpeg" alt="Works Pic 2"><textarea id="works_frame_textbox2" readonly>Works Text 2</textarea>
+                <img src="works_frame_pic3.jpeg" alt="Works Pic 3"><textarea id="works_frame_textbox3" readonly>Works Text 3</textarea>
+                <img src="works_frame_pic4.jpeg" alt="Works Pic 4"><textarea id="works_frame_textbox4" readonly>Works Text 4</textarea>
+                <img src="works_frame_pic5.jpeg" alt="Works Pic 5"><textarea id="works_frame_textbox5" readonly>Works Text 5</textarea>
+                <img src="works_frame_pic6.jpeg" alt="Works Pic 6"><textarea id="works_frame_textbox6" readonly>Works Text 6</textarea>
+                <img src="works_frame_pic7.jpeg" alt="Works Pic 7"><textarea id="works_frame_textbox7" readonly>Works Text 7</textarea>
+                <img src="works_frame_pic8.jpeg" alt="Works Pic 8"><textarea id="works_frame_textbox8" readonly>Works Text 8</textarea>
+                <img src="works_frame_pic9.jpeg" alt="Works Pic 9"><textarea id="works_frame_textbox9" readonly>Works Text 9</textarea>
+                <img src="works_frame_pic10.jpeg" alt="Works Pic 10"><textarea id="works_frame_textbox10" readonly>Works Text 10</textarea>
             </div>
-        </section>
-        <section id="gallery" class="page">
-            <div class="frame">
-                <img src="gallery_frame_pic1.jpeg" alt="Gallery Image 1">
-                <textarea id="gallery_frame_textbox1" placeholder="Description for Gallery Image 1"></textarea>
-                <img src="gallery_frame_pic2.jpeg" alt="Gallery Image 2">
-                <textarea id="gallery_frame_textbox2" placeholder="Description for Gallery Image 2"></textarea>
+        </div>
+    </div>
+    <div id="gallery" class="section gallery">
+        <div class="frame">
+            <h2>Gallery</h2>
+            <div class="frame-content">
+                <img src="gallery_frame_pic1.jpeg" alt="Gallery Pic 1"><textarea id="gallery_frame_textbox1" readonly>Gallery Text 1</textarea>
+                <img src="gallery_frame_pic2.jpeg" alt="Gallery Pic 2"><textarea id="gallery_frame_textbox2" readonly>Gallery Text 2</textarea>
+                <img src="gallery_frame_pic3.jpeg" alt="Gallery Pic 3"><textarea id="gallery_frame_textbox3" readonly>Gallery Text 3</textarea>
+                <img src="gallery_frame_pic4.jpeg" alt="Gallery Pic 4"><textarea id="gallery_frame_textbox4" readonly>Gallery Text 4</textarea>
+                <img src="gallery_frame_pic5.jpeg" alt="Gallery Pic 5"><textarea id="gallery_frame_textbox5" readonly>Gallery Text 5</textarea>
+                <img src="gallery_frame_pic6.jpeg" alt="Gallery Pic 6"><textarea id="gallery_frame_textbox6" readonly>Gallery Text 6</textarea>
+                <img src="gallery_frame_pic7.jpeg" alt="Gallery Pic 7"><textarea id="gallery_frame_textbox7" readonly>Gallery Text 7</textarea>
+                <img src="gallery_frame_pic8.jpeg" alt="Gallery Pic 8"><textarea id="gallery_frame_textbox8" readonly>Gallery Text 8</textarea>
+                <img src="gallery_frame_pic9.jpeg" alt="Gallery Pic 9"><textarea id="gallery_frame_textbox9" readonly>Gallery Text 9</textarea>
+                <img src="gallery_frame_pic10.jpeg" alt="Gallery Pic 10"><textarea id="gallery_frame_textbox10" readonly>Gallery Text 10</textarea>
             </div>
-        </section>
-        <section id="blog" class="page">
-            <div class="frame">
-                <img src="blog_frame_pic1.jpeg" alt="Blog Image 1">
-                <textarea id="blog_frame_textbox1" placeholder="Description for Blog Image 1"></textarea>
-                <img src="blog_frame_pic2.jpeg" alt="Blog Image 2">
-                <textarea id="blog_frame_textbox2" placeholder="Description for Blog Image 2"></textarea>
+        </div>
+    </div>
+    <div id="blog" class="section blog">
+        <div class="frame">
+            <h2>Blogs & Posts</h2>
+            <div class="frame-content">
+                <img src="blog_frame_pic1.jpeg" alt="Blog Pic 1"><textarea id="blog_frame_textbox1" readonly>Blog Text 1</textarea>
+                <img src="blog_frame_pic2.jpeg" alt="Blog Pic 2"><textarea id="blog_frame_textbox2" readonly>Blog Text 2</textarea>
+                <img src="blog_frame_pic3.jpeg" alt="Blog Pic 3"><textarea id="blog_frame_textbox3" readonly>Blog Text 3</textarea>
+                <img src="blog_frame_pic4.jpeg" alt="Blog Pic 4"><textarea id="blog_frame_textbox4" readonly>Blog Text 4</textarea>
+                <img src="blog_frame_pic5.jpeg" alt="Blog Pic 5"><textarea id="blog_frame_textbox5" readonly>Blog Text 5</textarea>
+                <img src="blog_frame_pic6.jpeg" alt="Blog Pic 6"><textarea id="blog_frame_textbox6" readonly>Blog Text 6</textarea>
+                <img src="blog_frame_pic7.jpeg" alt="Blog Pic 7"><textarea id="blog_frame_textbox7" readonly>Blog Text 7</textarea>
+                <img src="blog_frame_pic8.jpeg" alt="Blog Pic 8"><textarea id="blog_frame_textbox8" readonly>Blog Text 8</textarea>
+                <img src="blog_frame_pic9.jpeg" alt="Blog Pic 9"><textarea id="blog_frame_textbox9" readonly>Blog Text 9</textarea>
+                <img src="blog_frame_pic10.jpeg" alt="Blog Pic 10"><textarea id="blog_frame_textbox10" readonly>Blog Text 10</textarea>
             </div>
-        </section>
-        <section id="contact" class="page">
-            <div class="frame">
-                <img src="contact_frame_pic1.jpeg" alt="Contact Image 1">
-                <textarea id="contact_frame_textbox1" placeholder="Description for Contact Image 1"></textarea>
-                <img src="contact_frame_pic2.jpeg" alt="Contact Image 2">
-                <textarea id="contact_frame_textbox2" placeholder="Description for Contact Image 2"></textarea>
+        </div>
+    </div>
+    <div id="contact" class="section contact">
+        <div class="frame">
+            <h2>Contact Us</h2>
+            <div class="frame-content">
+                <img src="contact_frame_pic1.jpeg" alt="Contact Pic 1"><textarea id="contact_frame_textbox1" readonly>Contact Text 1</textarea>
+                <img src="contact_frame_pic2.jpeg" alt="Contact Pic 2"><textarea id="contact_frame_textbox2" readonly>Contact Text 2</textarea>
+                <img src="contact_frame_pic3.jpeg" alt="Contact Pic 3"><textarea id="contact_frame_textbox3" readonly>Contact Text 3</textarea>
+                <img src="contact_frame_pic4.jpeg" alt="Contact Pic 4"><textarea id="contact_frame_textbox4" readonly>Contact Text 4</textarea>
+                <img src="contact_frame_pic5.jpeg" alt="Contact Pic 5"><textarea id="contact_frame_textbox5" readonly>Contact Text 5</textarea>
+                <img src="contact_frame_pic6.jpeg" alt="Contact Pic 6"><textarea id="contact_frame_textbox6" readonly>Contact Text 6</textarea>
+                <img src="contact_frame_pic7.jpeg" alt="Contact Pic 7"><textarea id="contact_frame_textbox7" readonly>Contact Text 7</textarea>
+                <img src="contact_frame_pic8.jpeg" alt="Contact Pic 8"><textarea id="contact_frame_textbox8" readonly>Contact Text 8</textarea>
+                <img src="contact_frame_pic9.jpeg" alt="Contact Pic 9"><textarea id="contact_frame_textbox9" readonly>Contact Text 9</textarea>
+                <img src="contact_frame_pic10.jpeg" alt="Contact Pic 10"><textarea id="contact_frame_textbox10" readonly>Contact Text 10</textarea>
             </div>
-        </section>
-        <section id="help" class="page">
-            <div class="frame">
-                <img src="help_frame_pic1.jpeg" alt="Help Image 1">
-                <textarea id="help_frame_textbox1" placeholder="Description for Help Image 1"></textarea>
-                <img src="help_frame_pic2.jpeg" alt="Help Image 2">
-                <textarea id="help_frame_textbox2" placeholder="Description for Help Image 2"></textarea>
+        </div>
+    </div>
+    <div id="help" class="section help">
+        <div class="frame">
+            <h2>Help</h2>
+            <div class="frame-content">
+                <img src="help_frame_pic1.jpeg" alt="Help Pic 1"><textarea id="help_frame_textbox1" readonly>Help Text 1</textarea>
+                <img src="help_frame_pic2.jpeg" alt="Help Pic 2"><textarea id="help_frame_textbox2" readonly>Help Text 2</textarea>
+                <img src="help_frame_pic3.jpeg" alt="Help Pic 3"><textarea id="help_frame_textbox3" readonly>Help Text 3</textarea>
+                <img src="help_frame_pic4.jpeg" alt="Help Pic 4"><textarea id="help_frame_textbox4" readonly>Help Text 4</textarea>
+                <img src="help_frame_pic5.jpeg" alt="Help Pic 5"><textarea id="help_frame_textbox5" readonly>Help Text 5</textarea>
+                <img src="help_frame_pic6.jpeg" alt="Help Pic 6"><textarea id="help_frame_textbox6" readonly>Help Text 6</textarea>
+                <img src="help_frame_pic7.jpeg" alt="Help Pic 7"><textarea id="help_frame_textbox7" readonly>Help Text 7</textarea>
+                <img src="help_frame_pic8.jpeg" alt="Help Pic 8"><textarea id="help_frame_textbox8" readonly>Help Text 8</textarea>
+                <img src="help_frame_pic9.jpeg" alt="Help Pic 9"><textarea id="help_frame_textbox9" readonly>Help Text 9</textarea>
+                <img src="help_frame_pic10.jpeg" alt="Help Pic 10"><textarea id="help_frame_textbox10" readonly>Help Text 10</textarea>
             </div>
-        </section>
-        <section id="signin_login" class="page">
-            <div class="frame">
-                <img src="signin_login_frame_pic1.jpeg" alt="Signin Login Image 1">
-                <textarea id="signin_login_frame_textbox1" placeholder="Description for Signin Login Image 1"></textarea>
-                <img src="signin_login_frame_pic2.jpeg" alt="Signin Login Image 2">
-                <textarea id="signin_login_frame_textbox2" placeholder="Description for Signin Login Image 2"></textarea>
+        </div>
+    </div>
+    <div id="signin_login" class="section signin_login">
+        <div class="frame">
+            <h2>Signin/Login</h2>
+            <div class="frame-content">
+                <img src="signin_login_frame_pic1.jpeg" alt="Signin/Login Pic 1"><textarea id="signin_login_frame_textbox1" readonly>Signin/Login Text 1</textarea>
+                <img src="signin_login_frame_pic2.jpeg" alt="Signin/Login Pic 2"><textarea id="signin_login_frame_textbox2" readonly>Signin/Login Text 2</textarea>
+                <img src="signin_login_frame_pic3.jpeg" alt="Signin/Login Pic 3"><textarea id="signin_login_frame_textbox3" readonly>Signin/Login Text 3</textarea>
+                <img src="signin_login_frame_pic4.jpeg" alt="Signin/Login Pic 4"><textarea id="signin_login_frame_textbox4" readonly>Signin/Login Text 4</textarea>
+                <img src="signin_login_frame_pic5.jpeg" alt="Signin/Login Pic 5"><textarea id="signin_login_frame_textbox5" readonly>Signin/Login Text 5</textarea>
+                <img src="signin_login_frame_pic6.jpeg" alt="Signin/Login Pic 6"><textarea id="signin_login_frame_textbox6" readonly>Signin/Login Text 6</textarea>
+                <img src="signin_login_frame_pic7.jpeg" alt="Signin/Login Pic 7"><textarea id="signin_login_frame_textbox7" readonly>Signin/Login Text 7</textarea>
+                <img src="signin_login_frame_pic8.jpeg" alt="Signin/Login Pic 8"><textarea id="signin_login_frame_textbox8" readonly>Signin/Login Text 8</textarea>
+                <img src="signin_login_frame_pic9.jpeg" alt="Signin/Login Pic 9"><textarea id="signin_login_frame_textbox9" readonly>Signin/Login Text 9</textarea>
+                <img src="signin_login_frame_pic10.jpeg" alt="Signin/Login Pic 10"><textarea id="signin_login_frame_textbox10" readonly>Signin/Login Text 10</textarea>
             </div>
-        </section>
-    </main>
-    <footer>
-        <p>©2025 Radha Maadhav Gav Seva Evam Jan Kalyaan Samiti</p>
-        <p>Address: Village Akauri, Post Rampur, Tehsil Naigarhi, District Mauganj, Madhya Pradesh, India, PIN-486340</p>
-        <p>Contact: +91 7389597674, +91 7773059344</p>
-        <p>Email: <a href="mailto:santrajsingh2025@gmail.com">santrajsingh2025@gmail.com</a></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Radha Maadhav Gav Seva Evam Jan Kalyaan Samiti<br>
+            Address: Village Akauri, Post Rampur, Tehsil Naigarhi, District Mauganj, Madhya Pradesh, India, PIN-486340<br>
+            Contact: +91 7389597674, +91 7773059344 | Email: <a href="mailto:santrajsingh2025@gmail.com">santrajsingh2025@gmail.com</a></p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
