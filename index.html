@@ -3,121 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radha Maadhav Gav Seva Evam Jan Kalyaan Samiti</title>
+    <title>Radha Madhav Gav Seva</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Language Toggle -->
-    <div class="lang-toggle">
-        <a href="#" id="langSwitch" onclick="toggleLanguage()">हिन्दी</a>
-    </div>
-
-    <!-- Header -->
     <header>
-        <h1 class="en">Radha Maadhav Gav Seva Evam Jan Kalyaan Samiti</h1>
-        <h1 class="hi" style="display:none;">राधा माधव गव सेवा एवम जन कल्याण समिति</h1>
-        <nav>
-            <ul>
-                <li><a href="#home" class="en">Home</a><a href="#home" class="hi" style="display:none;">होम</a></li>
-                <li><a href="#about" class="en">About Us</a><a href="#about" class="hi" style="display:none;">हमारे बारे में</a></li>
-                <li><a href="#gallery" class="en">Gallery</a><a href="#gallery" class="hi" style="display:none;">गैलरी</a></li>
-                <li><a href="#donate" class="en">Donate</a><a href="#donate" class="hi" style="display:none;">दान करें</a></li>
-                <li><a href="#" onclick="openLoginModal('public')" class="en">Public Login</a><a href="#" onclick="openLoginModal('public')" class="hi" style="display:none;">पब्लिक लॉगिन</a></li>
-                <li><a href="#" onclick="openLoginModal('admin')" class="en">Admin Login</a><a href="#" onclick="openLoginModal('admin')" class="hi" style="display:none;">एडमिन लॉगिन</a></li>
-            </ul>
-        </nav>
+        <button id="lang-toggle">Switch to Hindi</button>
     </header>
-
-    <!-- Home Section -->
-    <section id="home">
-        <div class="content">
-            <h2 class="en">Welcome to Our Cow Shelter</h2>
-            <h2 class="hi" style="display:none;">हमारे गौशाला में आपका स्वागत है</h2>
-            <p class="en">We are dedicated to the protection and care of cows, promoting their well-being and spreading awareness about their importance in our culture.</p>
-            <p class="hi" style="display:none;">हम गायों की सुरक्षा और देखभाल के लिए समर्पित हैं, उनकी भलाई को बढ़ावा देते हैं और हमारी संस्कृति में उनके महत्व के बारे में जागरूकता फैलाते हैं।</p>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <h2 class="en">About Us</h2>
-        <h2 class="hi" style="display:none;">हमारे बारे में</h2>
-        <p class="en">Radha Maadhav Gav Seva Evam Jan Kalyaan Samiti is a non-profit organization based in Akauri, Mauganj, Madhya Pradesh. Our mission is to provide shelter, food, and medical care to cows and promote social welfare.</p>
-        <p class="hi" style="display:none;">राधा माधव गव सेवा एवम जन कल्याण समिति मध्य प्रदेश के मऊगंज, अकौरी में स्थित एक गैर-लाभकारी संगठन है। हमारा मिशन गायों को आश्रय, भोजन और चिकित्सा देखभाल प्रदान करना और सामाजिक कल्याण को बढ़ावा देना है।</p>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery">
-        <h2 class="en">Gallery</h2>
-        <h2 class="hi" style="display:none;">गैलरी</h2>
-        <div class="gallery-grid">
-            <img src="pics/cow1.jpeg" alt="Cow 1">
-            <img src="pics/cow2.jpeg" alt="Cow 2">
-            <img src="pics/cow3.jpeg" alt="Cow 3">
-            <img src="pics/cow4.jpeg" alt="Cow 4">
-            <img src="pics/cow5.jpeg" alt="Cow 5">
-            <img src="pics/cow6.jpeg" alt="Cow 6">
-            <img src="pics/cow7.jpeg" alt="Cow 7">
-            <img src="pics/cow8.jpeg" alt="Cow 8">
-            <img src="pics/cow9.jpeg" alt="Cow 9">
-            <img src="pics/cow10.jpeg" alt="Cow 10">
-        </div>
-    </section>
-
-    <!-- Donate Section -->
-    <section id="donate">
-        <h2 class="en">Support Our Cause</h2>
-        <h2 class="hi" style="display:none;">हमारे उद्देश्य का समर्थन करें</h2>
-        <p class="en">Your donations help us provide better care for our cows. Scan the UPI QR code below to contribute.</p>
-        <p class="hi" style="display:none;">आपका दान हमारी गायों की बेहतर देखभाल में मदद करता है। नीचे दिए गए UPI QR कोड को स्कैन करें।</p>
-        <img src="pics/upi_scanner.jpeg" alt="UPI Scanner" class="upi-img">
-    </section>
-
-    <!-- Footer -->
+    <nav>
+        <button onclick="showPage('home')">Home</button>
+        <button onclick="showPage('gems')">Gems of Society</button>
+        <button onclick="showPage('donation')">Donation</button>
+        <button onclick="showPage('auth')">Authentication</button>
+        <button onclick="showPage('about')">About Us</button>
+        <button onclick="showPage('works')">Works</button>
+        <button onclick="showPage('gallery')">Gallery</button>
+        <button onclick="showPage('blog')">Blogs & Posts</button>
+        <button onclick="showPage('contact')">Contact Us</button>
+        <button onclick="showPage('help')">Help</button>
+        <button onclick="showPage('signin_login')">Signin/Login</button>
+    </nav>
+    <main>
+        <section id="home" class="page active">
+            <div class="frame">
+                <img src="home_frame_pic1.jpeg" alt="Home Image 1">
+                <textarea id="home_frame_textbox1" placeholder="Description for Home Image 1"></textarea>
+                <img src="home_frame_pic2.jpeg" alt="Home Image 2">
+                <textarea id="home_frame_textbox2" placeholder="Description for Home Image 2"></textarea>
+            </div>
+        </section>
+        <section id="gems" class="page">
+            <div class="frame">
+                <img src="gems_frame_pic1.jpeg" alt="Gems Image 1">
+                <textarea id="gems_frame_textbox1" placeholder="Description for Gems Image 1"></textarea>
+                <img src="gems_frame_pic2.jpeg" alt="Gems Image 2">
+                <textarea id="gems_frame_textbox2" placeholder="Description for Gems Image 2"></textarea>
+                <img src="gems_frame_pic3.jpeg" alt="Gems Image 3">
+                <textarea id="gems_frame_textbox3" placeholder="Description for Gems Image 3"></textarea>
+                <img src="gems_frame_pic4.jpeg" alt="Gems Image 4">
+                <textarea id="gems_frame_textbox4" placeholder="Description for Gems Image 4"></textarea>
+                <img src="gems_frame_pic5.jpeg" alt="Gems Image 5">
+                <textarea id="gems_frame_textbox5" placeholder="Description for Gems Image 5"></textarea>
+                <img src="gems_frame_pic6.jpeg" alt="Gems Image 6">
+                <textarea id="gems_frame_textbox6" placeholder="Description for Gems Image 6"></textarea>
+                <img src="gems_frame_pic7.jpeg" alt="Gems Image 7">
+                <textarea id="gems_frame_textbox7" placeholder="Description for Gems Image 7"></textarea>
+                <img src="gems_frame_pic8.jpeg" alt="Gems Image 8">
+                <textarea id="gems_frame_textbox8" placeholder="Description for Gems Image 8"></textarea>
+                <img src="gems_frame_pic9.jpeg" alt="Gems Image 9">
+                <textarea id="gems_frame_textbox9" placeholder="Description for Gems Image 9"></textarea>
+                <img src="gems_frame_pic10.jpeg" alt="Gems Image 10">
+                <textarea id="gems_frame_textbox10" placeholder="Description for Gems Image 10"></textarea>
+            </div>
+        </section>
+        <section id="donation" class="page">
+            <div class="frame">
+                <img src="donation_frame_pic1.jpeg" alt="Donation Image 1">
+                <textarea id="donation_frame_textbox1" placeholder="Description for Donation Image 1"></textarea>
+                <img src="donation_frame_pic2.jpeg" alt="Donation Image 2">
+                <textarea id="donation_frame_textbox2" placeholder="Description for Donation Image 2"></textarea>
+            </div>
+        </section>
+        <section id="auth" class="page">
+            <div class="frame">
+                <img src="auth_frame_pic1.jpeg" alt="Auth Image 1">
+                <textarea id="auth_frame_textbox1" placeholder="Description for Auth Image 1"></textarea>
+                <img src="auth_frame_pic2.jpeg" alt="Auth Image 2">
+                <textarea id="auth_frame_textbox2" placeholder="Description for Auth Image 2"></textarea>
+            </div>
+        </section>
+        <section id="about" class="page">
+            <div class="frame">
+                <img src="about_frame_pic1.jpeg" alt="About Image 1">
+                <textarea id="about_frame_textbox1" placeholder="Description for About Image 1"></textarea>
+                <img src="about_frame_pic2.jpeg" alt="About Image 2">
+                <textarea id="about_frame_textbox2" placeholder="Description for About Image 2"></textarea>
+            </div>
+        </section>
+        <section id="works" class="page">
+            <div class="frame">
+                <img src="works_frame_pic1.jpeg" alt="Works Image 1">
+                <textarea id="works_frame_textbox1" placeholder="Description for Works Image 1"></textarea>
+                <img src="works_frame_pic2.jpeg" alt="Works Image 2">
+                <textarea id="works_frame_textbox2" placeholder="Description for Works Image 2"></textarea>
+            </div>
+        </section>
+        <section id="gallery" class="page">
+            <div class="frame">
+                <img src="gallery_frame_pic1.jpeg" alt="Gallery Image 1">
+                <textarea id="gallery_frame_textbox1" placeholder="Description for Gallery Image 1"></textarea>
+                <img src="gallery_frame_pic2.jpeg" alt="Gallery Image 2">
+                <textarea id="gallery_frame_textbox2" placeholder="Description for Gallery Image 2"></textarea>
+            </div>
+        </section>
+        <section id="blog" class="page">
+            <div class="frame">
+                <img src="blog_frame_pic1.jpeg" alt="Blog Image 1">
+                <textarea id="blog_frame_textbox1" placeholder="Description for Blog Image 1"></textarea>
+                <img src="blog_frame_pic2.jpeg" alt="Blog Image 2">
+                <textarea id="blog_frame_textbox2" placeholder="Description for Blog Image 2"></textarea>
+            </div>
+        </section>
+        <section id="contact" class="page">
+            <div class="frame">
+                <img src="contact_frame_pic1.jpeg" alt="Contact Image 1">
+                <textarea id="contact_frame_textbox1" placeholder="Description for Contact Image 1"></textarea>
+                <img src="contact_frame_pic2.jpeg" alt="Contact Image 2">
+                <textarea id="contact_frame_textbox2" placeholder="Description for Contact Image 2"></textarea>
+            </div>
+        </section>
+        <section id="help" class="page">
+            <div class="frame">
+                <img src="help_frame_pic1.jpeg" alt="Help Image 1">
+                <textarea id="help_frame_textbox1" placeholder="Description for Help Image 1"></textarea>
+                <img src="help_frame_pic2.jpeg" alt="Help Image 2">
+                <textarea id="help_frame_textbox2" placeholder="Description for Help Image 2"></textarea>
+            </div>
+        </section>
+        <section id="signin_login" class="page">
+            <div class="frame">
+                <img src="signin_login_frame_pic1.jpeg" alt="Signin Login Image 1">
+                <textarea id="signin_login_frame_textbox1" placeholder="Description for Signin Login Image 1"></textarea>
+                <img src="signin_login_frame_pic2.jpeg" alt="Signin Login Image 2">
+                <textarea id="signin_login_frame_textbox2" placeholder="Description for Signin Login Image 2"></textarea>
+            </div>
+        </section>
+    </main>
     <footer>
-        <p class="en">© 2025 Radha Maadhav Gav Seva Evam Jan Kalyaan Samiti<br>Address: Village Akauri, Post Rampur, Tehsil Naigarhi, District Mauganj, Madhya Pradesh, India, PIN-486340<br>Contact: +91 7389597674 | Email: santrajsingh2025@gmail.com</p>
-        <p class="hi" style="display:none;">© 2025 राधा माधव गव सेवा एवम जन कल्याण समिति<br>पता: ग्राम अकौरी, पोस्ट रामपुर, तहसील नईगढ़ी, जिला मऊगंज, मध्य प्रदेश, भारत, पिन-486340<br>संपर्क: +91 7389597674 | ईमेल: santrajsingh2025@gmail.com</p>
+        <p>©2025 Radha Maadhav Gav Seva Evam Jan Kalyaan Samiti</p>
+        <p>Address: Village Akauri, Post Rampur, Tehsil Naigarhi, District Mauganj, Madhya Pradesh, India, PIN-486340</p>
+        <p>Contact: +91 7389597674, +91 7773059344</p>
+        <p>Email: <a href="mailto:santrajsingh2025@gmail.com">santrajsingh2025@gmail.com</a></p>
     </footer>
-
-    <!-- Login Modals -->
-    <!-- Public Login Modal -->
-    <div id="publicLoginModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeLoginModal('public')">&times;</span>
-            <h2 class="en">Public Login</h2>
-            <h2 class="hi" style="display:none;">पब्लिक लॉगिन</h2>
-            <form id="publicLoginForm">
-                <label class="en" for="publicUsername">Username or Email/Mobile:</label>
-                <label class="hi" style="display:none;" for="publicUsername">उपयोगकर्ता नाम या ईमेल/मोबाइल:</label>
-                <input type="text" id="publicUsername" required>
-                <label class="en" for="publicPassword">Password:</label>
-                <label class="hi" style="display:none;" for="publicPassword">पासवर्ड:</label>
-                <input type="password" id="publicPassword" required>
-                <button type="submit" class="en">Login</button>
-                <button type="submit" class="hi" style="display:none;">लॉगिन</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Admin Login Modal -->
-    <div id="adminLoginModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeLoginModal('admin')">&times;</span>
-            <h2 class="en">Admin Login</h2>
-            <h2 class="hi" style="display:none;">एडमिन लॉगिन</h2>
-            <form id="adminLoginForm">
-                <label class="en" for="adminUsername">Username or Email/Mobile:</label>
-                <label class="hi" style="display:none;" for="adminUsername">उपयोगकर्ता नाम या ईमेल/मोबाइल:</label>
-                <input type="text" id="adminUsername" required>
-                <label class="en" for="adminPassword">Password:</label>
-                <label class="hi" style="display:none;" for="adminPassword">पासवर्ड:</label>
-                <input type="password" id="adminPassword" required>
-                <button type="submit" class="en">Login</button>
-                <button type="submit" class="hi" style="display:none;">लॉगिन</button>
-            </form>
-        </div>
-    </div>
-
     <script src="script.js"></script>
 </body>
 </html>
